@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rking/ag.vim'
+Plugin 'kien/ctrlp.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -47,21 +48,22 @@ filetype plugin indent on    " required
 """"""""""""""""""""Vundle"""""""""""""""""""""""""""
 
 syntax on
-set nu "number
-set sc "showcmd
-set is "incsearch search as entered
+set list
+set number              " show line numbers
+set showcmd             " show command in bottom bar
+set is                  "incsearch search as entered
 set hlsearch            " highlight matches
 
-set cursorline "highlight current line
+set cursorline          " highlight current line
 set cursorcolumn " cloumn cursor
 "设定高亮列的颜色为：
 "hi CursorLine cterm=NONE ctermbg=gray guibg=NONE guifg=NONEp
 "hi CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 "hi CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 
-set wildmenu "visual autocomplete for command menu
-set lazyredraw " redraw only when we need to.
-set showmatch " highlight matching [{()}]
+set wildmenu            "visual autocomplete for command menu
+set lazyredraw          " redraw only when we need to.
+set showmatch           " highlight matching [{()}]
 
 set softtabstop=4
 set ts=4  " number of visual spaces per TAB
@@ -75,7 +77,7 @@ set autoread
 
 set ruler
 
-filetype indent on 
+filetype indent on      " load filetype-specific indent files
 filetype on "enables filetype detection
 filetype plugin on  "enables filetype specific plugins
 set nobackup
@@ -143,17 +145,12 @@ if has("autocmd")
 	\ endif
 endif
 
-"bash
-let g:BASH_AuthorName = 'kelvin'
-let g:BASH_Email = 'wangkun@yh.cn'
-let g:BASH_Company = 'YinHan'
-
 "ag
 map <leader>a :Ag<space>
 let g:ag_working_path_mode='r'
 
 " ctrlP
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0 " always open files in new buffers
-let g:ctrlp_working_path_mode=''
-let g:ctrlp_user_command = 'ag %s -l -nocolor --hidden -g ""'
+"let g:ctrlp_match_window = 'bottom,order:ttb'
+"let g:ctrlp_switch_buffer = 0 " always open files in new buffers
+"let g:ctrlp_working_path_mode='ra'
+"let g:ctrlp_user_command = 'ag %s -l -nocolor --hidden -g ""'
