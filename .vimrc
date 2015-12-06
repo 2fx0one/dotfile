@@ -14,6 +14,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -48,7 +50,7 @@ filetype plugin indent on    " required
 """"""""""""""""""""Vundle"""""""""""""""""""""""""""
 
 syntax on
-set list
+"set list
 set number              " show line numbers
 set showcmd             " show command in bottom bar
 set is                  "incsearch search as entered
@@ -151,6 +153,10 @@ let g:ag_working_path_mode='r'
 
 " ctrlP
 "let g:ctrlp_match_window = 'bottom,order:ttb'
-"let g:ctrlp_switch_buffer = 0 " always open files in new buffers
+let g:ctrlp_switch_buffer = 0 " always open files in new buffers
 "let g:ctrlp_working_path_mode='ra'
 "let g:ctrlp_user_command = 'ag %s -l -nocolor --hidden -g ""'
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
