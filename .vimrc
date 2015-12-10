@@ -16,6 +16,13 @@ Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
+Plugin 'tsaleh/vim-supertab'
+Plugin 'vim-scripts/a.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'kshenoy/vim-signature'
+
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -56,7 +63,7 @@ set showcmd             " show command in bottom bar
 set is                  "incsearch search as entered
 set hlsearch            " highlight matches
 
-set cursorline          " highlight current line
+"set cursorline          " highlight current line
 set cursorcolumn " cloumn cursor
 "设定高亮列的颜色为：
 "hi CursorLine cterm=NONE ctermbg=gray guibg=NONE guifg=NONEp
@@ -153,10 +160,47 @@ let g:ag_working_path_mode='r'
 
 " ctrlP
 "let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0 " always open files in new buffers
+"let g:ctrlp_switch_buffer = 0 " always open files in new buffers
 "let g:ctrlp_working_path_mode='ra'
 "let g:ctrlp_user_command = 'ag %s -l -nocolor --hidden -g ""'
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+
+"statusline
+set laststatus=2
+
+"YCM
+nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
+
+"easymotion/vim-easymotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Bi-directional find motion
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-s)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
