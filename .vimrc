@@ -16,7 +16,7 @@ Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
-Plugin 'tsaleh/vim-supertab'
+"Plugin 'tsaleh/vim-supertab'
 Plugin 'vim-scripts/a.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
@@ -80,7 +80,7 @@ set sw=4 " number of spaces in tab when editing
 set expandtab " tabs are spaces
 
 set autoindent
-set cindent
+"set cindent
 set title
 set autoread
 
