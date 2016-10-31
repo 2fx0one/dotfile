@@ -14,6 +14,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 "Plugin 'tsaleh/vim-supertab'
@@ -64,7 +65,7 @@ set is                  "incsearch search as entered
 set hlsearch            " highlight matches
 
 "set cursorline          " highlight current line
-set cursorcolumn " cloumn cursor
+"set cursorcolumn " cloumn cursor
 "设定高亮列的颜色为：
 "hi CursorLine cterm=NONE ctermbg=gray guibg=NONE guifg=NONEp
 "hi CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
@@ -158,12 +159,30 @@ endif
 map <leader>a :Ag<space>
 let g:ag_working_path_mode='r'
 
-" ctrlP
-"let g:ctrlp_match_window = 'bottom,order:ttb'
+" ctrlP <C-f C-b> <C-j C-k> <C-t C-v C-x> <C-z mark C-o> help ctrlp-mappings
+let g:ctrlp_match_window = 'bottom,order:ttb'
 "let g:ctrlp_switch_buffer = 0 " always open files in new buffers
-"let g:ctrlp_working_path_mode='ra'
-"let g:ctrlp_user_command = 'ag %s -l -nocolor --hidden -g ""'
+let g:ctrlp_working_path_mode='ra'
+let g:ctrlp_user_command = 'ag %s -l -nocolor --hidden -g ""'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
 
+"Ctrlp-funky
+nnoremap fu :CtrlPFunky
+" narrow the list down with a word under cursor
+nnoremap fU :execute 'CtrlPFunky ' . expand('')
+let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_extensions = ['funky']
+
+"airline
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '|'
