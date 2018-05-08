@@ -1,69 +1,80 @@
-""""""""""""""""""""Vundle"""""""""""""""""""""""""""
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"""""""""""""""""""""""Vundle""""""""""""""""""""""
+set nocompatible              " 去除VI一致性,必须
+filetype off                  " 必须
 
-
-" set the runtime path to include Vundle and initialize
+" 设置包括vundle和初始化相关的runtime path
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
+" 另一种选择, 指定一个vundle安装插件的路径
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
+" 让vundle管理插件版本,必须
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'rking/ag.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'majutsushi/tagbar'
-Plugin 'bling/vim-airline'
-"Plugin 'tsaleh/vim-supertab'
-Plugin 'vim-scripts/a.vim'
+"Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-expand-region'
+Plugin 'rking/ag.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+"Bundle 'ervandew/supertab'
+"Plugin 'vim-scripts/a.vim' ".h .c .cpp switch
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'kshenoy/vim-signature'
+""Plugin 'vim-scripts/matchit.zip'
+Plugin 'kshenoy/vim-signature' "mark on column shortkey: m, ]` [`
+"Plugin 'fholgado/minibufexpl.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tomasr/molokai'
+Plugin 'chemzqm/wxapp.vim'
 
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
+" 以下范例用来支持不同格式的插件安装.
+" 请将安装插件的命令放在vundle#begin和vundle#end之间.
+" Github上的插件
+" 格式为 Plugin '用户名/插件仓库名'
+""Plugin 'tpope/vim-fugitive'
+" 来自 http://vim-scripts.org/vim/scripts.html 的插件
+" Plugin '插件名称' 实际上是 Plugin 'vim-scripts/插件仓库名' 只是此处的用户名可以省略
+""Plugin 'L9'
+" 由Git支持但不再github上的插件仓库 Plugin 'git clone 后面的地址'
+""Plugin 'git://git.wincent.com/command-t.git'
+" 本地的Git仓库(例如自己的插件) Plugin 'file:///+本地插件仓库绝对路径'
+""Plugin 'file:///home/gmarik/path/to/plugin'
+" 插件在仓库的子目录中.
+" 正确指定路径用以设置runtimepath. 以下范例插件在sparkup/vim目录下
+""Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" 安装L9，如果已经安装过这个插件，可利用以下格式避免命名冲突
+""Plugin 'ascenator/L9', {'name': 'newL9'}
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
+" 你的所有插件需要在下面这行之前
+call vundle#end()            " 必须
+filetype plugin indent on    " 必须 加载vim自带和插件相应的语法和文件类型相关脚本
+" 忽视插件改变缩进,可以使用以下替代:
 "filetype plugin on
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" 简要帮助文档
+" :PluginList       - 列出所有已配置的插件
+" :PluginInstall    - 安装插件,追加 `!` 用以更新或使用 :PluginUpdate
+" :PluginSearch foo - 搜索 foo ; 追加 `!` 清除本地缓存
+" :PluginClean      - 清除未使用插件,需要确认; 追加 `!` 自动批准移除未使用插件
 "
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-""""""""""""""""""""Vundle"""""""""""""""""""""""""""
+" 查阅 :h vundle 获取更多细节和wiki以及FAQ
+" 将你自己对非插件片段放在这行之后
+""""""""""""""""""""""Vundle""""""""""""""""""""""
+
+colorscheme molokai
+"set background=dark
+"set t_Co=256
+"let g:molokai_original = 1
+let g:rehash256=1
 
 syntax on
-"set list
-set number              " show line numbers
-set showcmd             " show command in bottom bar
-set is                  "incsearch search as entered
-set hlsearch            " highlight matches
+set number ""showline numbers
+set showcmd "" show command in bottom bar
+set hlsearch ""highlight matcher
 
 "set cursorline          " highlight current line
 "set cursorcolumn " cloumn cursor
@@ -76,7 +87,7 @@ set wildmenu            "visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
 
-set softtabstop=4
+"set softtabstop=4
 set ts=4  " number of visual spaces per TAB
 set sw=4 " number of spaces in tab when editing
 set expandtab " tabs are spaces
@@ -95,19 +106,13 @@ set nobackup
 set nowb
 set noswapfile
 
-"let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-"let Tlist_Show_One_File=1
-"let Tlist_Exit_OnlyWindow=1
-"let Tlist_Use_Right_Window=1
-
-"set background=light
-"set background=dark
-"colorscheme solarized
-"set t_Co=256
+"inoremap ( ()<Esc>i
+"inoremap [ []<Esc>i
+"inoremap { {}<Esc>i
+"inoremap " ""<Esc>i
 
 let mapleader=","
 let g:mapleader=","
-
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -117,58 +122,54 @@ map <leader>zz :wqa<cr>
 map <leader>w :w<cr>
 
 map <space> /
-map <C-space> ?
+"map <C-space> ?
 
 map j gj
 map k gk
 
 "buffer
-map <leader>n :bn<cr> 
-map <F6> :bn<cr>
-map <leader>p :bp<cr>
-map <F5> :bp<cr>
+"map <C-,> :bp<cr>
+"map <C-.> :bn<cr>
+nmap <Tab> :b<space>
+"map <leader>n :bn<cr>
+"map <F6> :bn<cr>
+"map <leader>p :bp<cr>
+"map <F5> :bp<cr>
 
 map <leader>e :NERDTreeToggle<cr>
-map <F7> :NERDTreeToggle<cr>
+"map <F7> :NERDTreeToggle<cr>
 map <leader>t :TagbarToggle<cr>
-map <F8> :TagbarToggle<cr>
+"map <F8> :TagbarToggle<cr>
 
-"nmap <C-tab> :tabnext <cr>
-"map <leader>tabn :tabnew<cr>
-"map <leader>tabo :tabonly<cr>
-"map <leader>tabc :tabclose<cr>
-"map <leader>tabm :tabmove <cr>
-"map <leader>t :tabnext <cr>
-
+" ======= superTab
+let g:SuperTabRetainCompletionType=2
 
 autocmd FileType make set noexpandtab
 autocmd FileType python set nocindent
 autocmd FileType sh set nocindent
 autocmd FileType expect set nocindent
 
-if has("autocmd")
-	" In text files, always limit the width of text to 78 characters
-	autocmd BufRead *.txt set tw=78
-	" When editing a file, always jump to the last cursor position
-	autocmd BufReadPost *
-	\ if line("'\"") > 0 && line ("'\"") <= line("$") |
-	\   exe "normal! $'\"" |
-	\ endif
-endif
-
 "ag
+"need brew install ag
 map <leader>a :Ag<space>
 let g:ag_working_path_mode='r'
 
+" ================== CtrlP =====================
 " ctrlP <C-f C-b> <C-j C-k> <C-t C-v C-x> <C-z mark C-o> help ctrlp-mappings
-let g:ctrlp_match_window = 'bottom,order:ttb'
-"let g:ctrlp_switch_buffer = 0 " always open files in new buffers
-let g:ctrlp_working_path_mode='ra'
-let g:ctrlp_user_command = 'ag %s -l -nocolor --hidden -g ""'
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+"map <leader>f :CtrlPMRU<CR>
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+"set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
-    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
-    \ }
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=15
@@ -176,27 +177,38 @@ let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 
-"Ctrlp-funky
-nnoremap fu :CtrlPFunky
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_user_command = 'ag %s -l -nocolor --hidden -g ""'
+
+" ctrlp插件 Ctrlp-funky
+nnoremap fu :CtrlPFunky<space>
 " narrow the list down with a word under cursor
 nnoremap fU :execute 'CtrlPFunky ' . expand('')
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_extensions = ['funky']
 
-"airline
-let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#left_sep = ' '
+" =================airline=============
+"let g:airline#extensions#tabline#left_sep = '>'
 "let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline_powerline_fonts = 2
+"if !exists('g:airline_symbols')
+"    let g:airline_symbols = {}
+"endif
+"let g:airline_left_sep = '▶'
+"let g:airline_left_alt_sep = '❯'
+"let g:airline_right_sep = '◀'
+"let g:airline_right_alt_sep = '❮'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+" 是否打开tabline
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_theme='dark'
+let g:airline_theme='simple'
 
-"statusline
+"statusline 显示状态栏 默认值是1
 set laststatus=2
 
-"YCM
-nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>gt :YcmCompleter GoTo<CR>
-
-"easymotion/vim-easymotion
+"========== easymotion/vim-easymotion ==================
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Bi-directional find motion
@@ -224,3 +236,10 @@ omap / <Plug>(easymotion-tn)
 
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" save session
+nnoremap <leader>s :mksession!<CR>

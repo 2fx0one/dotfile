@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# @2fx0one
+# 本工具希望能完成我个人开发环境中 mac 和 linux 环境的整合。
+# 包括：
+# VIM 配置
+# Mac 常用软件
+# 常用命令的 alias
+
+if [ $# -ne 1 ]; then
+    echo "命令行参数个数为： $#"
+    echo "Usage: $0 [mac/linux]"
+    exit -1;
+fi
+
