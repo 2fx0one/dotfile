@@ -1,6 +1,9 @@
 """""""""""""""""""""""Vundle""""""""""""""""""""""
 set nocompatible              " 去除VI一致性,必须
+set backspace=indent,eol,start
 filetype off                  " 必须
+
+" nmap <leader><Space><Space> :%s/\s\+$//<cr>
 
 " 设置包括vundle和初始化相关的runtime path
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -12,8 +15,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-"Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
+Plugin 'rhysd/clever-f.vim'
 Plugin 'rking/ag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
@@ -85,7 +89,7 @@ set hlsearch ""highlight matcher
 
 set wildmenu            "visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to.
-set showmatch           " highlight matching [{()}]
+"set showmatch           " highlight matching [{()}]
 
 "set softtabstop=4
 set ts=4  " number of visual spaces per TAB
@@ -111,8 +115,8 @@ set noswapfile
 "inoremap { {}<Esc>i
 "inoremap " ""<Esc>i
 
-let mapleader=","
-let g:mapleader=","
+let mapleader="\<Space>"
+"let g:mapleader=","
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -121,7 +125,7 @@ map <C-l> <C-W>l
 map <leader>zz :wqa<cr>
 map <leader>w :w<cr>
 
-map <space> /
+"map <space> /
 "map <C-space> ?
 
 map j gj
@@ -142,7 +146,9 @@ map <leader>t :TagbarToggle<cr>
 "map <F8> :TagbarToggle<cr>
 
 " ======= superTab
-let g:SuperTabRetainCompletionType=2
+" let g:SuperTabRetainCompletionType=2
+set completeopt=menu,menuone
+let g:ycm_add_preview_to_completeopt = 0
 
 autocmd FileType make set noexpandtab
 autocmd FileType python set nocindent
@@ -182,9 +188,9 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_user_command = 'ag %s -l -nocolor --hidden -g ""'
 
 " ctrlp插件 Ctrlp-funky
-nnoremap fu :CtrlPFunky<space>
+" nnoremap fu :CtrlPFunky<space>
 " narrow the list down with a word under cursor
-nnoremap fU :execute 'CtrlPFunky ' . expand('')
+" nnoremap fU :execute 'CtrlPFunky ' . expand('')
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_extensions = ['funky']
 
@@ -203,40 +209,50 @@ let g:ctrlp_extensions = ['funky']
 "let g:airline_symbols.branch = '⎇'
 " 是否打开tabline
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline_theme='dark'
-let g:airline_theme='simple'
+let g:airline_theme='dark'
+"let g:airline_theme='simple'
 
 "statusline 显示状态栏 默认值是1
 set laststatus=2
 
-"========== easymotion/vim-easymotion ==================
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
-" Bi-directional find motion
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-nmap s <Plug>(easymotion-s)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-s2)
-
-" Turn on case insensitive feature
+"========== easymotion/vim-easymotion  begin==================
 let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
-map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader><Leader> <Plug>(easymotion-prefix)
+"let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+map <Leader>h <Plug>(easymotion-linebackward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-
+map <Leader>l <Plug>(easymotion-lineforward)
+" 重复上一次操作, 类似repeat插件, 很强大
+"map <Leader><leader>. <Plug>(easymotion-repeat)
+"let g:EasyMotion_do_mapping = 0 " Disable default mappings
+"
+"" Bi-directional find motion
+"" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+"" `s{char}{label}`
+"nmap s <Plug>(easymotion-s)
+"" or
+"" `s{char}{char}{label}`
+"" Need one more keystroke, but on average, it may be more comfortable.
+"nmap s <Plug>(easymotion-s2)
+"
+"" Turn on case insensitive feature
+"let guEasyMotion_smartcase = 1
+"
+"" JK motions: Line motions
+"map <Leader>l <Plug>(easymotion-lineforward)
+"map <Leader>j <Plug>(easymotion-j)
+"map <Leader>k <Plug>(easymotion-k)
+"map <Leader>h <Plug>(easymotion-linebackward)
+"
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
-
-map  / <Plug>(easymotion-sn)
+"
+map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-
+"
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
+"========== easymotion/vim-easymotion  end==================
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
