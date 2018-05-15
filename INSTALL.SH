@@ -47,7 +47,7 @@ install_dot_file() {
     mark_str="${comment_symbol}###INSTALL_$(echo $arg_file | tr 'a-z' 'A-Z')_MARK###"
 
     source_dot_file="${work_dir}/${arg_file}"
-    target_dot_file="${HOME}/.${arg_file}"
+    target_dot_file="${HOME}/${arg_file}"
 
     #echo "$source_dot_file"
     #echo "$target_dot_file"
@@ -71,7 +71,7 @@ install_dot_file() {
 
 }
 
-install_dot_file 'bash_profile' '#'
-install_dot_file 'vimrc' '"'
+install_dot_file '.bash_profile' '#'
+install_dot_file '.vimrc' '"'
 
 
