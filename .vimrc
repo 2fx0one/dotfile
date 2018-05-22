@@ -33,6 +33,7 @@ Plugin 'kshenoy/vim-signature' "mark on column shortkey: m, ]` [`
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tomasr/molokai'
 Plugin 'chemzqm/wxapp.vim'
+Plugin 'posva/vim-vue'
 
 
 " 以下范例用来支持不同格式的插件安装.
@@ -155,6 +156,7 @@ autocmd FileType python set nocindent
 autocmd FileType sh set nocindent
 autocmd FileType expect set nocindent
 autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.wpy setlocal filetype=vue.html.javascript.css
 
 "ag
 "need brew install ag
