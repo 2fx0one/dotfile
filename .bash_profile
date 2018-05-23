@@ -1,12 +1,12 @@
 export JAVA_6_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 export JAVA_7_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
-export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home
-export JAVA_9_HOME=/Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home
+export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+export JAVA_10_HOME=/Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home
 
 alias jdk6="export JAVA_HOME=$JAVA_6_HOME"
 alias jdk7="export JAVA_HOME=$JAVA_7_HOME"
 alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
-alias jdk9="export JAVA_HOME=$JAVA_9_HOME"
+alias jdk10="export JAVA_HOME=$JAVA_10_HOME"
 
 export JAVA_HOME=`/usr/libexec/java_home`  #最后安装的版本，这样当自动更新时，始终指向最新版本
 
