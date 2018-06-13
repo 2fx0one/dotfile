@@ -44,3 +44,9 @@ export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
 
 export PATH="$PATH:/Users/2fx0one/Downloads/cocos2d-x-3.16/tools/cocos2d-console/bin"
 export LC_ALL="zh_CN.UTF-8"
+
+#export GOROOT="/usr/local/Cellar/go/1.10.2/libexec"
+#export GOPATH="/Users/2fx0one/goLearning"
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+
