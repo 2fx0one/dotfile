@@ -49,4 +49,4 @@ export LC_ALL="zh_CN.UTF-8"
 #export GOPATH="/Users/2fx0one/goLearning"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-
+alias prettyjson='python -m json.tool'

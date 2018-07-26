@@ -150,6 +150,10 @@ map <leader>t :TagbarToggle<cr>
 " let g:SuperTabRetainCompletionType=2
 set completeopt=menu,menuone
 let g:ycm_add_preview_to_completeopt = 0
+" Fix Python Path (for YCM)
+"let g:ycm_python_binary_path = 'python'
+"let g:ycm_path_to_python_interpreter="/usr/bin/python"
+let g:ycm_path_to_python_interpreter="/usr/local/bin/python3"
 
 autocmd FileType make set noexpandtab
 autocmd FileType python set nocindent
