@@ -28,6 +28,8 @@ brew cask install chrome
 #brew tap caskroom/versions
 brew cask install karabiner-elements
 
+brew cask install snipaste
+
 
 brew cask install firefox 
 brew cask install sublime
