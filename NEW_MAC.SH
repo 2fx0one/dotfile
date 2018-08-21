@@ -6,7 +6,7 @@ which brew && echo "brew has INSTALL" || /usr/bin/ruby -e "$(curl -fsSL https://
 
 brew install wget
 brew install python
-brew install vim@8.0
+brew install vim --with-python3
 brew install cmake
 brew install mtr
 brew install autojump
