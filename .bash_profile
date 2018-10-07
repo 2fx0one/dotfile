@@ -39,7 +39,7 @@ alias killport='function _killport(){ lsof -n -i4TCP:$@ | grep LISTEN | awk "{pr
 
 #alias ports='netstat -tulan'
 alias subl='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text -n'
-#export PATH="/usr/local/sbin:$PATH" #eg. mtr
+export PATH="/usr/local/sbin:$PATH" #eg. mtr
 #export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
 
 #export PATH="$PATH:/Users/2fx0one/Downloads/cocos2d-x-3.16/tools/cocos2d-console/bin"
