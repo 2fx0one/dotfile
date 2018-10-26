@@ -12,7 +12,7 @@ brew install mtr
 brew install autojump
 brew install tree
 
-brew install mit-scheme
+#brew install mit-scheme
 
 #json pretty python -m json.tool
 brew install jq
@@ -32,9 +32,9 @@ brew cask install snipaste
 
 
 brew cask install firefox 
-brew cask install sublime
+brew cask install sublime-text
 brew cask install atom
-brew cask install vscode
+brew cask install visual-studio-code
 
 #brew cask install java7
 brew cask install java8

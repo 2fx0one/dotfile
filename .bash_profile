@@ -40,6 +40,7 @@ alias killport='function _killport(){ lsof -n -i4TCP:$@ | grep LISTEN | awk "{pr
 #alias ports='netstat -tulan'
 alias subl='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text -n'
 export PATH="/usr/local/sbin:$PATH" #eg. mtr
+export PATH="/usr/local/opt/subversion@1.8/bin:$PATH"
 #export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
 
 #export PATH="$PATH:/Users/2fx0one/Downloads/cocos2d-x-3.16/tools/cocos2d-console/bin"
@@ -50,3 +51,7 @@ export LC_ALL="zh_CN.UTF-8"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 alias prettyjson='python -m json.tool'
+
+#export http_proxy=http://127.0.0.1:1087 
+#export https_proxy=$http_proxy 
+#export ALL_PROXY=$http_proxy
