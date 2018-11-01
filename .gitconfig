@@ -2,3 +2,7 @@
 	proxy = http://127.0.0.1:1087
 [https]
 	proxy = http://127.0.0.1:1087
+[alias]
+     st = status
+     lg = log --pretty=format:\"%C(auto)%h %ad | %C(auto)%s%d  %Cblue(%an)\" --graph --date=shor    t
+
