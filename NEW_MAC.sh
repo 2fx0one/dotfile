@@ -22,9 +22,6 @@ brew install mit-scheme
 
 #brew tap caskroom/cask
 
-#https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize webpquicklook suspicious-package quicklookase qlvideo provisionql quicklookapk
-qlmanage -r
 
 #brew tap caskroom/versions
 brew cask install karabiner-elements
@@ -47,3 +44,11 @@ brew cask install wechat
 brew cask install qq
 brew cask install alfred
 brew cask install hyperdock
+brew cask install appcleaner
+
+
+#https://github.com/sindresorhus/quick-look-plugins
+brew cask install qlcolorcode qlstephen qlmarkdown
+brew cask quicklook-json qlimagesize webpquicklook suspicious-package 
+brewcask quicklookase qlvideo provisionql quicklookapk
+qlmanage -r
