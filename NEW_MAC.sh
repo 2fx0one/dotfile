@@ -22,7 +22,6 @@ brew install mit-scheme
 
 #brew tap caskroom/cask
 
-
 #https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize webpquicklook suspicious-package quicklookase qlvideo provisionql quicklookapk
 qlmanage -r
@@ -30,16 +29,19 @@ qlmanage -r
 #brew tap caskroom/versions
 brew cask install karabiner-elements
 
+brew cask install the-unarchiver
 brew cask install snipaste
+brew cask install aria2gui
+brew cask install iina
 
 brew cask install sublime-text
-brew cask install atom
 brew cask install visual-studio-code
+#brew cask install atom
 
 #brew cask install java7
 #brew cask install java8
 
-brew cask install chrome
+brew cask install google-chrome
 brew cask install firefox 
 brew cask install wechat
 brew cask install qq
