@@ -54,6 +54,6 @@ brew cask install sqluel-pro
 
 #https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown
-brew cask quicklook-json qlimagesize webpquicklook suspicious-package 
-brewcask quicklookase qlvideo provisionql quicklookapk
+brew cask install quicklook-json qlimagesize webpquicklook suspicious-package 
+brew cask install quicklookase qlvideo provisionql quicklookapk
 qlmanage -r
