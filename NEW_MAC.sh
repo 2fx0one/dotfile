@@ -50,6 +50,7 @@ brew cask install alfred
 brew cask install hyperdock
 brew cask install appcleaner
 brew cask install sqluel-pro
+brew cask install keycastr
 
 
 #https://github.com/sindresorhus/quick-look-plugins
