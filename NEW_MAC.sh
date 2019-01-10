@@ -16,20 +16,13 @@ brew install autojump
 brew install tree
 brew install ag
 
-
-#brew install neovim
-
 brew install mit-scheme
 
 #json pretty python -m json.tool
 #brew install jq
 
-#brew tap caskroom/cask
 
-
-#brew tap caskroom/versions
 brew cask install karabiner-elements
-
 brew cask install the-unarchiver
 brew cask install snipaste
 brew cask install aria2gui
