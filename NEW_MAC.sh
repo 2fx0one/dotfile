@@ -19,7 +19,7 @@ brew install ag
 brew install mit-scheme
 
 #json pretty python -m json.tool
-#brew install jq
+brew install jq
 
 
 brew cask install karabiner-elements
@@ -43,8 +43,8 @@ brew cask install alfred
 brew cask install hyperdock
 brew cask install appcleaner
 brew cask install sqluel-pro
-brew cask install keycastr
-
+brew cask install keycastr #显示快捷键
+brew cask install mongodb # mongdb.app
 
 #https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown
