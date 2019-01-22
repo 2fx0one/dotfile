@@ -16,20 +16,13 @@ brew install tree
 brew install ag
 brew install proxychains-ng
 
-
-#brew install neovim
-
 brew install mit-scheme
 
 #json pretty python -m json.tool
-#brew install jq
-
-#brew tap caskroom/cask
+brew install jq
 
 
-#brew tap caskroom/versions
 brew cask install karabiner-elements
-
 brew cask install the-unarchiver
 brew cask install snipaste
 brew cask install aria2gui
@@ -50,10 +43,11 @@ brew cask install alfred
 brew cask install hyperdock
 brew cask install appcleaner
 brew cask install sqluel-pro
-
+brew cask install keycastr #显示快捷键
+brew cask install mongodb # mongdb.app
 
 #https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown
-brew cask quicklook-json qlimagesize webpquicklook suspicious-package 
-brewcask quicklookase qlvideo provisionql quicklookapk
+brew cask install quicklook-json qlimagesize webpquicklook suspicious-package 
+brew cask install quicklookase qlvideo provisionql quicklookapk
 qlmanage -r
