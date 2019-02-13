@@ -3,7 +3,6 @@
 #brew install
 which brew && echo "brew has INSTALL" || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-
 brew install wget
 #brew install python3
 #brew install neofetch
@@ -15,6 +14,7 @@ brew install htop
 brew install autojump
 brew install tree
 brew install ag
+brew install proxychains-ng
 
 brew install mit-scheme
 
