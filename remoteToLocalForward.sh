@@ -1,16 +1,21 @@
 #!/bin/bash
 
 if [ "$#" -ne 1 ]; then
-    echo "Usage $0 [start/stop/restart]"
+    echo "Usage $0 [start/stop/restart] [server/root@host] [localPort] [remotePort]"
+    echo "Usage $0 [start/stop/restart] "
     exit 1
 fi
 
+server="shop"
+localPort="8894"
+remotePort="8895"
+
 function start () {
-    ssh -i ~/.ssh/qipai/id_rsa -vvv  -C -f -N -g -R 127.0.0.1:8894:127.0.0.1:8895 root@122.152.202.61 
+    ssh -i ~/.ssh/id_rsa -vvv  -C -f -N -g -R "127.0.0.1:${localPort}:127.0.0.1:${remotePort} ${server}"
 }
 
 function stop() {
-    pids=$(ps aux | grep '8894:127.0.0.1:8895' | grep -v 'grep' | awk '{print $2}')
+    pids=$(ps aux | grep "${localPort}:127.0.0.1:${remotePort}" | grep -v 'grep' | awk '{print $2}')
     for pid in $pids
     do
             echo "kill ${pid}"
