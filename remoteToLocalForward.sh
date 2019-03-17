@@ -11,7 +11,7 @@ localPort="8894"
 remotePort="8895"
 
 function start () {
-    ssh -i ~/.ssh/id_rsa -vvv  -C -f -N -g -R "127.0.0.1:${localPort}:127.0.0.1:${remotePort} ${server}"
+    ssh -i ~/.ssh/id_rsa -vvv  -C -f -N -g -R 127.0.0.1:${localPort}:127.0.0.1:${remotePort} ${server}
 }
 
 function stop() {
