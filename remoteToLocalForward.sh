@@ -7,11 +7,11 @@ if [ "$#" -ne 1 ]; then
 fi
 
 server="shop"
-localPort="8894"
-remotePort="8895"
+localPort="9526"
+remotePort="9527"
 
 function start () {
-    ssh -i ~/.ssh/id_rsa -vvv  -C -f -N -g -R "127.0.0.1:${localPort}:127.0.0.1:${remotePort} ${server}"
+    ssh -i ~/.ssh/id_rsa -vvv  -C -f -N -g -R 127.0.0.1:${remotePort}:127.0.0.1:${localPort} ${server}
 }
 
 function stop() {
