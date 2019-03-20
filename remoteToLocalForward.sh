@@ -10,8 +10,14 @@ server="shop"
 localPort="9526"
 remotePort="9527"
 
+red_msg() {
+    echo -e "\033[31m\033[01m $1 \033[0m"
+}
 function start () {
-    ssh -i ~/.ssh/id_rsa -vvv  -C -f -N -g -R 127.0.0.1:${remotePort}:127.0.0.1:${localPort} ${server}
+    ssh -i ~/.ssh/id_rsa -vvv  -C -f -N -g -R 127.0.0.1:${localPort}:127.0.0.1:${remotePort} ${server}
+    sleep 0.5
+    red_msg "Remote connections from 127.0.0.1:${localPort} forwarded to local address 127.0.0.1:${remotePort}"
+    red_msg "please check!!!"
 }
 
 function stop() {
