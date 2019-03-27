@@ -9,12 +9,12 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-
 "Plug 'christoomey/vim-tmux-navigator'
 Plug 'rhysd/clever-f.vim'
 
 " Colorschemes
 Plug 'tomasr/molokai'
+"Plug 'altercation/vim-colors-solarized'
 
 " Syntax
 Plug 'tpope/vim-git', { 'for': 'git' }
@@ -46,15 +46,19 @@ Plug 'scrooloose/nerdtree'
 Plug 'easymotion/vim-easymotion'
 Plug 'posva/vim-vue'
 
-filetype plugin indent on                   " required!
+" required!
+filetype plugin indent on
+
 call plug#end()
 
 
 " Colorschemes
 colorscheme molokai
-" Colors
-syntax on               " This has to come after colorcolumn in order to draw it.
-set t_Co=256                " enable 256 colors
+"let g:molokai_original = 1
+syntax enable              " This has to come after colorcolumn in order to draw it.
+"set background=dark
+"colorscheme solarized
+"set t_Co=256                " enable 256 colors
 
 set langmenu=en
 let $LANG='en'
@@ -84,13 +88,14 @@ set lazyredraw          " redraw only when we need to.
 set ts=4  " number of visual spaces per TAB
 set sw=4 " number of spaces in tab when editing
 set expandtab " tabs are spaces
+set backspace=indent,eol,start " backspace=2
 
 set autoindent
 "set cindent
 set title
 set autoread
 
-"set ruler
+set ruler
 
 filetype indent on      " load filetype-specific indent files
 filetype on "enables filetype detection
@@ -118,7 +123,12 @@ map <Tab> :b<space>
 map j gj
 map k gk
 
-"let g:airline_theme='zenburn'
+"airline
+let g:airline_theme='simple'
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
 
 
 " If we have The Silver Searcher
@@ -181,6 +191,8 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_extensions = ['funky']
 
+" markdown
+let g:vim_markdown_folding_disabled = 1
 
 " Auto detect filetype
 autocmd BufRead,BufNewFile *.md,*.markdown set filetype=markdown
@@ -189,7 +201,7 @@ autocmd BufRead,BufNewFile ~/dotfiles/ssh/config set filetype=sshconfig
 autocmd BufRead,BufNewFile *.git/config,.gitconfig,.gitmodules,gitconfig set ft=gitconfig
 autocmd BufNewFile,BufRead .eslintrc set filetype=javascript
 autocmd BufNewFile,BufRead *.es6 set filetype=javascript
-autocmd BufRead,BufNewFile *.py setlocal foldmethod=indent
+"autocmd BufRead,BufNewFile *.py setlocal foldmethod=indent
 autocmd FileType make set noexpandtab
 autocmd FileType python set nocindent
 autocmd FileType sh set nocindent
