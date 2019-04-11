@@ -9,7 +9,7 @@ which brew && echo "brew has INSTALL" || /usr/bin/ruby -e "$(curl -fsSL https://
 brew install wget
 #brew install python3
 #brew install neofetch
-brew install vim --with-python3
+brew install vim
 brew install cmake
 brew install mtr
 brew install htop
