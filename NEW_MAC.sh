@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#on my zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 #brew install
 which brew && echo "brew has INSTALL" || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -42,7 +45,7 @@ brew cask install qq
 brew cask install alfred
 brew cask install hyperdock
 brew cask install appcleaner
-brew cask install sqluel-pro
+brew cask install sequel-pro
 brew cask install keycastr #显示快捷键
 brew cask install mongodb # mongdb.app
 
