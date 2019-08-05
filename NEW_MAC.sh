@@ -46,7 +46,7 @@ brew cask install alfred
 brew cask install hyperdock
 brew cask install appcleaner
 brew cask install sequel-pro
-brew cask install keycastr #显示快捷键
+brew cask install keycastr #右下角显示快捷键
 brew cask install mongodb # mongdb.app
 
 #https://github.com/sindresorhus/quick-look-plugins
