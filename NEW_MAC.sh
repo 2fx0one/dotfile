@@ -24,6 +24,9 @@ brew install mit-scheme
 #json pretty python -m json.tool
 brew install jq
 
+# just for fun
+brew install cmatrix
+
 
 brew cask install karabiner-elements
 brew cask install the-unarchiver
