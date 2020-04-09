@@ -1,25 +1,25 @@
 #!/bin/bash
 
-if [ "$#" -ne 4 ]; then
+if [ "$#" -ne 1 ]; then
     echo "Usage $0 [start/stop/restart] [server/root@host] [remotePort] [localPort] "
     echo "Usage $0 [start/stop/restart] "
     exit 1
 fi
 
 server=${1:-shop}
-localPort=${2:-8080}
-remotePort=${3:-8080}
+remotePort=${2:-4988}
+localPort=${3:-8894}
 
 echo $server  $remotePort $localPort
-exit 1
+#exit 1
 
 red_msg() {
     echo -e "\033[31m\033[01m $1 \033[0m"
 }
 function start () {
-    ssh -i ~/.ssh/id_rsa -vvv  -C -f -N -g -R 0.0.0.0:${remotePort}:127.0.0.1:${localPort} ${server}
+    ssh -i ~/.ssh/id_rsa -vvv  -C -f -N -g -R 0.0.0.0:${remotePort}:127.0.0.1:${localPort} shop
     sleep 0.5
-    red_msg "Remote connections from 127.0.0.1:${localPort} forwarded to local address 127.0.0.1:${remotePort}"
+    red_msg "Remote connections from 127.0.0.1:${remotePort} forwarded to local address 127.0.0.1:${localPort}"
     red_msg "please check!!!"
 }
 
